@@ -3,6 +3,7 @@
 import "@fontsource-variable/inter";
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
+import { X_URL } from "../consts";
 ---
 
 <header>
@@ -23,7 +24,7 @@ import { SITE_TITLE } from "../consts";
           ></path></svg
         >
       </a>
-      <a href="{X_URL}" target="_blank">
+      <a href={X_URL} target="_blank">
         <span class="sr-only">Follow Dave on Twitter</span>
         <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
           ><path
@@ -44,7 +45,7 @@ import { SITE_TITLE } from "../consts";
     </div>
   </nav>
 </header>
-<style>
+<style lang="scss">
   header {
     margin: 0;
     padding: 0 1em;
@@ -52,13 +53,30 @@ import { SITE_TITLE } from "../consts";
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
   }
   h2 {
-    margin: 0;
+    margin: 0 0 0 0.66em;
     font-size: 1em;
+    a,
+    a.active {
+      text-decoration: none;
+    }
   }
 
   h2 a,
   h2 a.active {
     text-decoration: none;
+  }
+
+  /*
+    --- Sticky Footer Nav on Mobile ---
+  */
+  @media screen and (max-width: 490px) {
+    header {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: 0px -5px 8px 0px rgba(0, 0, 0, 0.36);
+    }
   }
   nav {
     display: flex;

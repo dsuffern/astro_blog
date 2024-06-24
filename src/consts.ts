@@ -4,3 +4,4 @@
 export const SITE_TITLE = 'Dave Suffern';
 export const SITE_DESCRIPTION = 'Welcome to my website!';
 export const X_URL = 'https://x.com/davesuffern';
+export const Youtube_URL = 'https://www.youtube.com/channel/UCW96zW2g-OizVu44ebOqTGA';
